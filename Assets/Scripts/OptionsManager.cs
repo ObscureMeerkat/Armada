@@ -8,6 +8,7 @@ public class OptionsManager : MonoBehaviour
     [Header("Volume Sliders")]
     public Slider masterVolumeSlider;
     public Slider sfxVolumeSlider;
+    public Slider musicVolumeSlider;
 
     [Header("High Score Display")]
     public TextMeshProUGUI[] scoreEntries;
@@ -30,6 +31,13 @@ public class OptionsManager : MonoBehaviour
             sfxVolumeSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
         }
 
+        if (musicVolumeSlider != null)
+        {
+            musicVolumeSlider.value = AudioManager.Instance != null ?
+                AudioManager.Instance.GetMusicVolume() : 1f;
+            musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
+        }
+
         initialising = false;
         LoadHighScores();
     }
@@ -46,6 +54,13 @@ public class OptionsManager : MonoBehaviour
         if (initialising) return;
         if (AudioManager.Instance != null)
             AudioManager.Instance.SetSFXVolume(value);
+    }
+
+    public void OnMusicVolumeChanged(float value)
+    {
+        if (initialising) return;
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.SetMusicVolume(value);
     }
 
     void LoadHighScores()

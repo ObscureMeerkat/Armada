@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   audioMixer: {fileID: 24100000, guid: 4479dd9140f6a4c9c99e1110d8254a9c, type: 2}
-  sfxSource: {fileID: 0}
+  sfxSource: {fileID: 393863257}
 --- !u!4 &363341819
 Transform:
   m_ObjectHideFlags: 0
@@ -839,7 +839,7 @@ AudioSource:
   m_GameObject: {fileID: 393863252}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3852866337446957247, guid: 4479dd9140f6a4c9c99e1110d8254a9c, type: 2}
+  OutputAudioMixerGroup: {fileID: -2499312834840433166, guid: 4479dd9140f6a4c9c99e1110d8254a9c, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 5acf4f7c76e4b4bdb8bb224907e56dd1, type: 3}
   m_PlayOnAwake: 1
@@ -1116,7 +1116,7 @@ GameObject:
   - component: {fileID: 915494242}
   - component: {fileID: 915494241}
   m_Layer: 5
-  m_Name: OPTIONS
+  m_Name: Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
