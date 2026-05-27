@@ -10,6 +10,9 @@ public class EnemyIndicator : MonoBehaviour
     public Color indicatorColor = new Color(0.8f, 0.13f, 0f, 1f);
     public float arrowSize = 0.3f;
 
+    [Header("Rendering")]
+    public Material indicatorMaterial;
+
     private Camera mainCamera;
     private List<GameObject> indicators = new List<GameObject>();
     private List<EnemySloop> enemies = new List<EnemySloop>();
@@ -64,7 +67,7 @@ public class EnemyIndicator : MonoBehaviour
         mf.mesh = mesh;
 
         // URP compatible material
-        Material mat = new Material(Shader.Find("Universal Render Pipeline/Unlit"));
+        Material mat = new Material(indicatorMaterial);
         mat.color = indicatorColor;
         mr.material = mat;
         mr.sortingOrder = 20;
